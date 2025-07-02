@@ -9,13 +9,21 @@ A machine learning model that predicts cricket match outcomes using match-level 
 - Domain-informed features: venue advantage, recent win %, batting strength, toss influence, etc.
 
 ## 📁 Project Structure
-crickcast
-├── data
-│   ├── matches.csv                        # Match-level data with teams, toss, venue, result
-│   └── most_runs_average_strikerate.csv   # Player performance stats (average, strike rate)
-├── Crickcast_Prediction.ipynb             # Main Colab notebook with full ML pipeline
-├── requirements.txt                       # List of required Python packages
-├── README.md                              # Project overview and documentation
+1. Data Collection: Import match-level data (matches.csv) and player stats.
+2. Data Cleaning: Handle missing values, fix formats, ensure consistency.
+3. Feature Engineering:
+ - Recent win % (last 5 matches)
+ - Batting strength (top 5 player averages)
+ - Toss-win relationship
+ - Home advantage flag
+ - Head-to-head win ratio
+4. Dataset Merging: Merge engineered features into the master dataset.
+5. Model Training: Train a LightGBM classifier using train_test_split.
+6. Hyperparameter Tuning: Use GridSearchCV to optimize LightGBM.
+7. Model Evaluation: Measure accuracy and analyze feature importance.
+8. Final Accuracy: Achieved 65.1%, outperforming all baselines.
+
+
 
 
 ## 🧪 How to Run
